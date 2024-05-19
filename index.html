@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customizable Website Template</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1 id="hero-title">Welcome to My Beautiful Website</h1>
+        <p id="hero-description">This is a simple and elegant template for your website.</p>
+        <button onclick="scrollToAbout()">Learn More</button>
+    </section>
+
+    <section id="about">
+        <h2 id="about-title">About Me</h2>
+        <p id="about-description">This is the about section where you can include information about yourself or your website.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p id="footer-text">&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+
+    <div id="customization-panel">
+        <h2>Customize Your Site</h2>
+        
+        <label for="hero-title-input">Hero Title:</label>
+        <input type="text" id="hero-title-input" placeholder="Enter Hero Title">
+        
+        <label for="hero-description-input">Hero Description:</label>
+        <input type="text" id="hero-description-input" placeholder="Enter Hero Description">
+        
+        <label for="accent-color">Accent Color:</label>
+        <input type="color" id="accent-color">
+        
+        <label for="about-title-input">About Title:</label>
+        <input type="text" id="about-title-input" placeholder="Enter About Title">
+        
+        <label for="about-description-input">About Description:</label>
+        <textarea id="about-description-input" placeholder="Enter About Description"></textarea>
+
+        <label for="user-name-input">Your Name:</label>
+        <input type="text" id="user-name-input" placeholder="Enter Your Name">
+        
+        <button onclick="applyCustomizations()">Apply</button>
+        <button onclick="exportWebsite()">Export</button>
+    </div>
+
+    <!-- Pop-up Notification -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup()">&times;</span>
+            <h2>Hello!</h2>
+            <p>This tool was developed with ChatGPT-4 in under an hour. To use the tool, fill in your preferences in the customization pane, and click export to receive a ZIP file containing a .html, a .js, and a .css file.</p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
