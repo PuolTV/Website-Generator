@@ -98,6 +98,9 @@ function applyCustomizations() {
             button.style.backgroundColor = accentColor;
         });
         document.querySelector('footer').style.backgroundColor = accentColor;
+
+        // Store the accent color in a data attribute for export
+        document.documentElement.setAttribute('data-accent-color', accentColor);
     }
 
     // About section customizations
@@ -133,6 +136,9 @@ function closePopup() {
 // Function to export the website as a zip file
 function exportWebsite() {
     const zip = new JSZip();
+    
+    // Get the current accent color
+    const accentColor = document.documentElement.getAttribute('data-accent-color') || '#0066cc';
 
     // HTML content excluding the customization panel and the pop-up
     const indexContent = `
@@ -291,6 +297,9 @@ function applyCustomizations() {
             button.style.backgroundColor = accentColor;
         });
         document.querySelector('footer').style.backgroundColor = accentColor;
+
+        // Store the accent color in a data attribute for export
+        document.documentElement.setAttribute('data-accent-color', accentColor);
     }
 
     // About section customizations
@@ -432,7 +441,7 @@ nav ul li a:hover::after {
     padding: 0.5rem 1rem;
     font-size: 1rem;
     border: none;
-    background-color: #0066cc;
+    background-color: ${accentColor};
     color: #fff;
     cursor: pointer;
     margin-top: 1rem;
@@ -441,7 +450,7 @@ nav ul li a:hover::after {
 }
 
 .hero button:hover {
-    background-color: #0055a4;
+    background-color: ${accentColor};
     transform: scale(1.1);
 }
 
@@ -493,14 +502,14 @@ form textarea {
 
 form input:focus,
 form textarea:focus {
-    border-color: #0066cc;
+    border-color: ${accentColor};
 }
 
 form button {
     padding: 0.5rem 1rem;
     font-size: 1rem;
     border: none;
-    background-color: #0066cc;
+    background-color: ${accentColor};
     color: #fff;
     cursor: pointer;
     margin-top: 1rem;
@@ -508,12 +517,12 @@ form button {
 }
 
 form button:hover {
-    background-color: #0055a4;
+    background-color: ${accentColor};
     transform: scale(1.1);
 }
 
 footer {
-    background-color: #333;
+    background-color: ${accentColor};
     color: #fff;
     text-align: center;
     padding: 1rem 0;
@@ -574,14 +583,14 @@ footer:hover {
     padding: 0.5rem;
     width: 100%;
     border: none;
-    background-color: #0066cc;
+    background-color: ${accentColor};
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 #customization-panel button:hover {
-    background-color: #0055a4;
+    background-color: ${accentColor};
     transform: scale(1.05);
 }
     `;
