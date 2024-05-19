@@ -98,6 +98,7 @@ function applyCustomizations() {
             button.style.backgroundColor = accentColor;
         });
         document.querySelector('footer').style.backgroundColor = accentColor;
+        document.querySelector('header nav').style.color = accentColor; // Change the text color in the header
 
         // Store the accent color in a data attribute for export
         document.documentElement.setAttribute('data-accent-color', accentColor);
@@ -297,6 +298,7 @@ function applyCustomizations() {
             button.style.backgroundColor = accentColor;
         });
         document.querySelector('footer').style.backgroundColor = accentColor;
+        document.querySelector('header nav').style.color = accentColor; // Apply accent color to header text
 
         // Store the accent color in a data attribute for export
         document.documentElement.setAttribute('data-accent-color', accentColor);
@@ -339,8 +341,8 @@ body {
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #333; /* Keep the background color fixed */
+    color: #fff; /* Default text color */
     padding: 1rem;
     position: fixed;
     top: 0;
@@ -370,7 +372,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: ${accentColor}; /* Use the accent color */
     text-decoration: none;
     font-weight: bold;
     position: relative;
@@ -381,7 +383,7 @@ nav ul li a::after {
     display: block;
     width: 0;
     height: 2px;
-    background: #fff;
+    background: ${accentColor}; /* Use the accent color */
     transition: width 0.3s;
 }
 
@@ -441,7 +443,7 @@ nav ul li a:hover::after {
     padding: 0.5rem 1rem;
     font-size: 1rem;
     border: none;
-    background-color: ${accentColor};
+    background-color: ${accentColor}; /* Use the accent color */
     color: #fff;
     cursor: pointer;
     margin-top: 1rem;
@@ -450,7 +452,7 @@ nav ul li a:hover::after {
 }
 
 .hero button:hover {
-    background-color: ${accentColor};
+    background-color: ${accentColor}; /* Use the accent color */
     transform: scale(1.1);
 }
 
@@ -502,14 +504,14 @@ form textarea {
 
 form input:focus,
 form textarea:focus {
-    border-color: ${accentColor};
+    border-color: ${accentColor}; /* Use the accent color */
 }
 
 form button {
     padding: 0.5rem 1rem;
     font-size: 1rem;
     border: none;
-    background-color: ${accentColor};
+    background-color: ${accentColor}; /* Use the accent color */
     color: #fff;
     cursor: pointer;
     margin-top: 1rem;
@@ -517,12 +519,12 @@ form button {
 }
 
 form button:hover {
-    background-color: ${accentColor};
+    background-color: ${accentColor}; /* Use the accent color */
     transform: scale(1.1);
 }
 
 footer {
-    background-color: ${accentColor};
+    background-color: ${accentColor}; /* Use the accent color */
     color: #fff;
     text-align: center;
     padding: 1rem 0;
@@ -583,14 +585,14 @@ footer:hover {
     padding: 0.5rem;
     width: 100%;
     border: none;
-    background-color: ${accentColor};
+    background-color: ${accentColor}; /* Use the accent color */
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 #customization-panel button:hover {
-    background-color: ${accentColor};
+    background-color: ${accentColor}; /* Use the accent color */
     transform: scale(1.05);
 }
     `;
